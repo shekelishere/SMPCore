@@ -1,0 +1,38 @@
+name: SMPCore
+version: '${project.version}'
+main: dev.smpcore.SMPCore
+api-version: '1.21'
+description: Orders, Shards, AFK zone and Bounties for a DonutSMP-style server
+depend: [Vault]
+softdepend: [PlaceholderAPI, Essentials]
+
+commands:
+  orders:
+    description: Browse, create and manage buy orders
+    usage: /orders [create <amount> <price-each> | mine | collect]
+    aliases: [order]
+  shards:
+    description: Check, pay or manage shards
+    usage: /shards [player] | pay <player> <amount>
+  shardshop:
+    description: Open the shard shop
+    aliases: [sshop]
+  afk:
+    description: Teleport to the AFK zone
+  afkzone:
+    description: Set up the AFK zone
+    usage: /afkzone <pos1|pos2|setspawn|info>
+    permission: smpcore.admin
+  bounty:
+    description: Place or view bounties
+    usage: /bounty [<player> <amount> | check <player> | top]
+    aliases: [bounties]
+  smpcore:
+    description: SMPCore admin
+    usage: /smpcore reload
+    permission: smpcore.admin
+
+permissions:
+  smpcore.admin:
+    description: Admin commands (shard give/take/set, afkzone, reload)
+    default: op

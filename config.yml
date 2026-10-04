@@ -1,0 +1,64 @@
+# SMPCore config
+# Colors: &a, &c ... and hex like &#FF8800
+
+prefix: "&#F7A2C4&lSMP &8» &7"
+
+orders:
+  max-orders-per-player: 5
+  max-amount: 6400          # max items in one order
+  min-price-each: 0.1
+  max-price-each: 1000000
+
+shards:
+  min-pay: 1
+
+afk-zone:
+  enabled: true
+  world: world
+  # Set these in-game with /afkzone pos1 and /afkzone pos2
+  pos1: "0,0,0"
+  pos2: "0,0,0"
+  interval-seconds: 60      # time inside the zone per payout
+  shards-per-interval: 1
+  actionbar: true
+  # spawn: set in-game with /afkzone setspawn
+
+bounty:
+  min-amount: 1000
+
+# Shard shop. "slot" is 0-based. If "commands" is empty, the player gets the item shown.
+# Commands run from console; %player% is replaced with the buyer's name.
+shard-shop:
+  title: "&8Shard Shop"
+  rows: 3
+  items:
+    xp:
+      slot: 10
+      material: EXPERIENCE_BOTTLE
+      amount: 32
+      name: "&a32x XP Bottles"
+      lore: ["&7Bottled experience"]
+      price: 5
+    gapples:
+      slot: 12
+      material: GOLDEN_APPLE
+      amount: 16
+      name: "&616x Golden Apples"
+      lore: ["&7For your next fight"]
+      price: 10
+    totem:
+      slot: 14
+      material: TOTEM_OF_UNDYING
+      amount: 1
+      name: "&eTotem of Undying"
+      lore: ["&7Cheat death once"]
+      price: 25
+    money:
+      slot: 16
+      material: GOLD_INGOT
+      amount: 1
+      name: "&a$10K Cash"
+      lore: ["&7Converts shards to money"]
+      price: 20
+      commands:
+        - "eco give %player% 10000"
